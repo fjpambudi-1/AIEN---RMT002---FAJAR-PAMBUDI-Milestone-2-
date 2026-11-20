@@ -1,0 +1,42 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\User\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\IT\Hacktiv8\Applied AI Engineer\AIEN Project\Phase 2\Milestone 2\milestone2-aien_docs-main\Analytics-Agent
+plugins: anyio-4.15.1, langsmith-0.14.16, platformdirs-4.14.0
+collecting ... collected 27 items
+
+tests/test_agent_and_api.py::test_end_to_end_analytics_scope_injection_and_grounding PASSED [  3%]
+tests/test_agent_and_api.py::test_db_failure_returns_safe_503_without_secrets PASSED [  7%]
+tests/test_agent_and_api.py::test_root_and_favicon_endpoints PASSED      [ 11%]
+tests/test_agent_and_api.py::test_openai_client_adapts_to_reasoning_model_constraints PASSED [ 14%]
+tests/test_auth_and_conversations.py::test_healthz_no_auth_required PASSED [ 18%]
+tests/test_auth_and_conversations.py::test_invalid_and_missing_tokens_return_401 PASSED [ 22%]
+tests/test_auth_and_conversations.py::test_cross_user_isolation_and_persistence PASSED [ 25%]
+tests/test_sql_guard.py::test_valid_select_appends_limit PASSED          [ 29%]
+tests/test_sql_guard.py::test_valid_select_clamps_excessive_limit PASSED [ 33%]
+tests/test_sql_guard.py::test_valid_cte_and_rate_query PASSED            [ 37%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[UPDATE gold.shipment_fact SET delivery_status = 'delivered'] PASSED [ 40%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[DELETE FROM gold.shipment_fact WHERE shipment_id = 'SHP-00001'] PASSED [ 44%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[INSERT INTO gold.shipment_fact (shipment_id) VALUES ('X')] PASSED [ 48%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[DROP TABLE gold.shipment_fact] PASSED [ 51%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[ALTER TABLE gold.shipment_fact ADD COLUMN x text] PASSED [ 55%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[COPY gold.shipment_fact TO STDOUT] PASSED [ 59%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * FROM gold.shipment_fact; DROP TABLE gold.shipment_fact] PASSED [ 62%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * FROM gold.shipment_fact -- comment] PASSED [ 66%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * FROM gold.shipment_fact /* block comment */] PASSED [ 70%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * FROM information_schema.tables] PASSED [ 74%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * FROM pg_catalog.pg_tables] PASSED [ 77%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * FROM public.users] PASSED [ 81%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * FROM shipment_fact] PASSED [ 85%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT pg_sleep(5) FROM gold.shipment_fact] PASSED [ 88%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT * INTO temp_tbl FROM gold.shipment_fact] PASSED [ 92%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[bad_sql15] PASSED [ 96%]
+tests/test_sql_guard.py::test_rejects_unsafe_or_disallowed_sql[SELECT secret_column FROM gold.shipment_fact] PASSED [100%]
+
+============================== warnings summary ===============================
+..\..\..\..\..\..\..\..\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\langsmith\_internal\_beta_decorator.py:92: 13 warnings
+  C:\Users\User\AppData\Local\Programs\Python\Python314\Lib\site-packages\langsmith\_internal\_beta_decorator.py:92: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    if asyncio.iscoroutinefunction(func):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 27 passed, 13 warnings in 0.91s =======================
